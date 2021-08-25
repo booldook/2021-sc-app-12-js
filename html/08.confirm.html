@@ -44,8 +44,12 @@
 			console.log(  $(this).prevAll()  );	// return []
 		});
 
-		console.log( $('<li class="list"></li>') );	// DOM리턴 - 메모리에만 존재하는 DOM
+		console.clear();
 
+		console.log( $('<li class="list"></li>') );	// DOM리턴 - 메모리에만 존재하는 DOM
+		var $list = $('.list').slice();
+		$('.list').remove();
+		console.log($list);
 	</script>
 </body>
 </html>

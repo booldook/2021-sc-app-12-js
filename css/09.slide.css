@@ -1,0 +1,32 @@
+/**************** global init ****************/
+.wrapper {max-width: 720px; margin: 50px auto; position: relative;}
+.slide-wrap {position: relative; left: -100%;}
+.slide-wrap {width: 300%; display: flex;}
+.slide-wrap .slide {width: 33.3333%;}
+.bt-navi {position: absolute; top: 50%; transform: translateY(-50%); font-size: 5em; color: #fff; cursor: pointer;}
+.bt-prev {left: 20px;}
+.bt-next {right: 20px;}
+
+/**********************  *********************/
+
+
+/******************* 반응형 ******************/
+@media (max-width: 1399px) {
+	
+}
+
+@media (max-width: 1199px) {
+	
+}
+
+@media (max-width: 991px) {
+	
+}
+
+@media (max-width: 767px) {
+	
+}
+
+@media (max-width: 575px) {
+	
+}
