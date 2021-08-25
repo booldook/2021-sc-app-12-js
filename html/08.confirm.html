@@ -6,6 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<script src="../js/jquery.min.js"></script>
+	<style>
+		.lists {color: red; border: 2px solid blue;}
+	</style>
 </head>
 <body>
 	<ul class="lists lists1">
@@ -50,6 +53,8 @@
 		var $list = $('.list').slice();
 		$('.list').remove();
 		console.log($list);
+
+		console.log( $('.lists').css(['color', 'border']) )
 	</script>
 </body>
 </html>
