@@ -1,0 +1,23 @@
+<script>
+	var a = Number.parseInt('1234.56');	// return Number(버림)
+	var b = Number.parseFloat('1234.56'); // return Number
+	var c = b.toFixed(1); // return String(반올림)
+	var d = Number('1234.56');
+	console.log(a, b, c, d);
+
+	var e = 0/0;
+	var f = Number.isNaN(e); // true, false
+	console.log(e, f);
+	console.log(
+		Number.isNaN(NaN),
+		Number.isNaN(undefined),
+		Number.isNaN(null),
+		Number.isNaN("abcd"),
+		Number.isNaN(1234),
+		Number.isNaN(true),
+	);
+
+	var g = Number.isInteger(100);	// 정수 true, 실수 false
+	var h = Number.isInteger(100.23);
+	console.log(g, h);
+</script>
