@@ -1,0 +1,63 @@
+<script>
+/**
+ * 배열의 반복메서드
+ * arr.forEach(fn)		: Array
+ * arr.every(fn)
+ * arr.some(fn)
+ * arr.filter(fn)
+ * arr.map(fn)
+ */
+
+// forEach: undefined
+// arr.forEach(function(값, 인덱스, 배열자신) { })
+var arr = ['A', 'B', 'C'];
+arr.forEach(function(v, i, a) {
+	console.log(v, i, a, this);
+});
+
+// every: Boolean(true, false) => 모든 요소가 true => true
+// 모든 요소를 순회하면서 리턴값이 하나라도 false 이면 false리턴, 모든 요소가 true여야 true리턴
+var arr = [60, 70, 50, 30, 60, 100];
+var result = arr.every(function(v) {
+	return v >= 60;
+});
+console.log(result);
+
+// some: Boolean(true, false) => 모든 요소중 하나라도 true => true
+// 모든 요소를 순회하면서 리턴값이 하나라도 true 이면 true리턴, 모든 요소가 false여야 false리턴
+var arr = [60, 70, 50, 30, 60, 100];
+var result = arr.some(function(v) {
+	return v === 100;
+});
+console.log(result);
+
+// ★★★★★ //
+// filter: Array => 조건에 맞는 요소만 리턴(결과는 새로운 배열에 담는다)
+var arr = [60, 70, 50, 30, 60, 100];
+var result = arr.filter(function(v) {
+	return v >= 60;
+});
+console.log(result);
+
+// 학생데이터가 아래와 같이 있습니다.
+var students = [
+	{ id: 1, name: '홍길동', age: 19, kor: 90, eng: 80 },
+	{ id: 2, name: '홍길만', age: 25, kor: 80, eng: 65 },
+	{ id: 3, name: '홍길순', age: 32, kor: 100, eng: 55 },
+	{ id: 4, name: '별주부', age: 96, kor: 85, eng: 88 },
+	{ id: 5, name: '구운몽', age: 23, kor: 75, eng: 89 },
+	{ id: 6, name: '임꺽정', age: 45, kor: 55, eng: 99 },
+	{ id: 7, name: '이순신', age: 55, kor: 35, eng: 72 },
+	{ id: 8, name: '김선달', age: 35, kor: 95, eng: 45 },
+]
+
+// 문제1. 국어점수가 60점 이상인 학생을 찾으시오.
+
+
+// 문제2. 국어점수와 영어점수가 60점 이상인 학생을 찾으시오.
+
+
+// 문제3. 국어점수와 영어점수가 60점 이상인 30세 이상의 학생을 찾으시오.
+
+
+</script>

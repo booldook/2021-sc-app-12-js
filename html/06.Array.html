@@ -1,0 +1,72 @@
+<script>
+	var arr = ['A', 'B', 'C'];
+
+	console.log( arr.length );
+
+	// arr.push(넣을 값): length; => 배열 맨 뒤에 요소 삽입
+	console.log(
+		arr.push('D'),
+		arr,
+	);
+
+	// arr.pop(): element => 배열의 맨 뒤 요소 추출
+	console.log(
+		arr.pop(),
+		arr,
+	);
+
+	// arr.unshift(넣을 값): length; => 배열 맨 앞에 요소 삽입
+	console.log(
+		arr.unshift('Z'),
+		arr,
+	);
+
+	// arr.shift(): element => 배열의 맨 앞 요소 추출
+	console.log(
+		arr.shift(),
+		arr,
+	);
+
+	// arr.splice(index(작업할), length(추출할 요소[]), value(넣을 값)): 추출된 요소
+	var arr = ['A', 'B', 'C'];
+	console.log( arr.splice(1, 1, 'b') );		// ['B']
+	console.log( arr );											// ['A', 'b', 'C']
+	
+	console.log( arr.splice(1, 0, 'BB') );	// []
+	console.log( arr );											// ['A', 'BB', 'b', 'C']
+	
+	console.log( arr.splice(1, 1) );				// ['BB']
+	console.log( arr );											// ['A', 'b', 'C']
+
+
+	// arr.slice(시작idx, 끝idx(끝idx불포함)): Array (원본배열은 남아있음 - deepcopy로 활용)
+	var arr = ['A', 'B', 'C'];
+	console.log( arr.slice(0, 2) ); // ["A", "B"]
+	console.log( arr ); // ["A", "B"]
+
+	console.log('==================');
+	var arr = ['A', 'B', 'C'];
+	var arr2 = arr;
+	console.log(arr, arr2);
+	arr2.push('D');
+	console.log(arr, arr2);
+	console.log( arr === arr2 ); // 같은놈
+
+	console.log('==================');
+	var arr = ['A', 'B', 'C'];
+	var arr3 = arr.slice();
+	console.log(arr, arr3);
+	arr3.push('D');
+	console.log(arr, arr3);
+	console.log( arr === arr3 ); // 다른놈
+
+	// arr.concat(arr2) => 배열 두개를 합치기 (새로운 배열을 리턴)
+	console.log('==================');
+	var arr = ['A', 'B', 'C'];
+	var arr2 = ['D', 'E', 'F'];
+	console.log( arr.concat(arr2) );
+
+	var arr3 = arr.concat();	// deepcopy
+	console.log( arr3 );
+	console.log( arr === arr3 );
+</script>
