@@ -32,7 +32,7 @@ var result = arr.some(function(v) {
 console.log(result);
 
 // ★★★★★ //
-// filter: Array => 조건에 맞는 요소만 리턴(결과는 새로운 배열에 담는다)
+// filter: Array => 배열을 순회하면서 조건에 맞는 요소만 리턴(결과는 새로운 배열에 담는다)
 var arr = [60, 70, 50, 30, 60, 100];
 var result = arr.filter(function(v) {
 	return v >= 60;
@@ -40,6 +40,7 @@ var result = arr.filter(function(v) {
 console.log(result);
 
 // 학생데이터가 아래와 같이 있습니다.
+console.clear();
 var students = [
 	{ id: 1, name: '홍길동', age: 19, kor: 90, eng: 80 },
 	{ id: 2, name: '홍길만', age: 25, kor: 80, eng: 65 },
@@ -52,12 +53,55 @@ var students = [
 ]
 
 // 문제1. 국어점수가 60점 이상인 학생을 찾으시오.
-
+var kor60 = students.filter(function(v) {
+	// return v;
+	return v.kor >= 60; // true or false, 조건만 적는다.
+});
+console.log(kor60);
 
 // 문제2. 국어점수와 영어점수가 60점 이상인 학생을 찾으시오.
-
+var korEng60 = students.filter(function(v) {
+	return v.kor >= 60 && v.eng >= 60;
+});
+console.log(korEng60);
 
 // 문제3. 국어점수와 영어점수가 60점 이상인 30세 이상의 학생을 찾으시오.
+var age30 = students.filter(function(v) {
+	return v.kor >= 60 && v.eng >= 60 && v.age >= 30;
+});
+console.log(age30);
 
+// 문제4. 국어점수와 영어점수가 60점 이상인 홍씨를 찾으시오.
+var hong60 = students.filter(function(v) {
+	// return v.kor >= 60 && v.eng >= 60 && v.name.includes('홍');
+	return v.kor >= 60 && v.eng >= 60 && v.name.indexOf('홍') > -1;
+});
+console.log(hong60);
+
+
+// ★★★★★ //
+// map: Array => 배열을 순회하면서 변경된 요소를 리턴(결과는 새로운 배열에 담는다)
+console.clear();
+// 문제1. 국어점수가 60점 이상인 학생을 찾으시오.
+var total60 = students.map(function(v) {
+	v.total = v.kor + v.eng;
+	// return v;
+	return v.total;
+});
+console.log(total60);
+
+// ★★★★ //
+// reduce: Any => 배열을 순회하면서 누산결과를 리턴
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var result = arr.reduce(function(acc, current, i) {
+	return acc + current;
+});
+console.log(result);
+
+// 문제1. 모든학생의 국어점수 총점을 구하시오.
+var result = students.reduce(function(acc, current, i) {
+	return acc + current.kor;
+}, 0);
+console.log(result);
 
 </script>
