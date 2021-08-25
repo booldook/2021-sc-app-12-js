@@ -1,0 +1,101 @@
+<script>
+	// char: 문자
+	// string: 문자열
+
+	// indexOf('찾을문자열', 찾기시작할 idx): Number
+	var a = 'H';						// 문자열(String)
+	var b = 'Hello World';	// 문자열(String)
+	console.log(
+		b.charAt(0),
+		b.length,
+		b.indexOf('l'),
+		b.indexOf('l', 4),
+	);
+
+	console.log(
+		'가나다',
+		new String('가나다')
+	);
+
+	function findChar(str, search) {
+		var cnt = 0, i = 0;
+		while(str.indexOf(search, i) > -1) {
+			i = str.indexOf(search, i) + 1;
+			cnt++;
+		}
+		return cnt;
+	}
+
+	console.log(findChar(b, 'l'));
+
+	// ES6 indexOf()
+	var a = 'H';						// 문자열(String)
+	var b = 'Hello World';	// 문자열(String)
+	console.log(
+		b.includes('l'),
+		b.includes('l', 0),
+		b.startsWith('He'),
+		b.endsWith('d'),
+	);
+
+
+	// str.replace('찾을 문자열', '바꿀문자열'): String
+	var c = 'Hello Booldook';
+	console.log(
+		c.replace('He', 'De'),
+	);
+
+	// substr('시작idx', '길이'): String, substring('시작idx', '직전idx'): String
+	var dt = '2021-08-25 11:22:33';
+	console.log(
+		dt.substr(0, 10),			// 2021-08-25
+		dt.substr(11, 2),			// 11
+		dt.substring(11, 13),	// 11
+	)
+
+	// split('구분할 문자열'): Array
+	var tel = '010-1111-2222';
+	var telArr = tel.split('-');
+	console.log(telArr);
+
+	var cart = '10^2#11^1#15^3#30^2';
+	var cartArr = cart.split('#');
+	var myCart = [];
+	var myCart2 = [];
+	for(var i=0; i<cartArr.length; i++) {
+		myCart[i] = cartArr[i].split('^');
+		myCart2[i] = { productId: myCart[i][0], count: myCart[i][1] }
+	}
+	console.log(
+		cartArr,
+		myCart,
+		myCart[1][1],
+		myCart2
+	)
+
+	// str.toLowerCase() -> str을 소문자로
+	// str.toUpperCase() -> str을 대문자로...
+
+	// str.concat(str2) -> str1 + str2;
+	var a = 'Hello ', b = 'World';
+	console.log( a.concat(b) );
+
+	// str.trim()  =>  '   가나다   ' -> '가나다'
+
+	console.log( 
+		String(123), 
+		String(true), 
+		String(undefined), 
+		String(null), 
+		String(NaN)
+	);
+
+
+	var immutables = [];
+	var str = 'apple, banana, kiwi';
+	immutables.push(str);
+	var str2 = str.substr(7, 6);
+	immutables.push(str2);
+
+	console.log(str, str2, immutables);
+</script>
