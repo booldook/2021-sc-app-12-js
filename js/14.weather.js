@@ -20,6 +20,7 @@ function onGet(r) {
 	let [, { id, name, lat, lon }] = seoul;
 	console.log(korCity, city);
 	console.log(id, name, lat, lon);
+	// console.log( JSON.stringify(city) );
 }
 
 function onError(err) {
