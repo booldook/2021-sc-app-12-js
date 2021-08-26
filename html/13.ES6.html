@@ -20,4 +20,18 @@
 	
 	const { random } = numberFn;
 	console.log( random(1, 10) );
+
+	const { numberFn: fn } = utils; // 별칭으로 구조분해할당 하기
+	console.log( fn.random(1, 10) );
+	
+	const { random: rd } = fn;
+	console.log( rd(1, 10) );
+
+
+	const arr = ['A학교', 'B학교', 'C학교'];
+	let [schoolA, schoolB, schoolC] = arr;
+	console.log(schoolB);
+	let [, , c] = arr;
+	console.log(c);
+
 </script>
