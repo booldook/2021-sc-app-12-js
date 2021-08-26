@@ -59,7 +59,15 @@ function init() {
 
 /************** event callback ************/
 function onGetWeather(r) {
-	console.log(r.data);
+	let { main, name, weather } = r.data;
+	let { temp } = main;
+	let { main: title, description, icon } = weather[0];
+	const $wrap = $('.weather-wrap');
+	$wrap.find('.city span').text(name);
+	$wrap.find('.img-wp img').attr('src', icons[0] + icon + icons[1]);
+	$wrap.find('.temp-wp span').text(temp);
+	$wrap.find('.desc-wp .main').text(title);
+	$wrap.find('.desc-wp .description').text(description);
 }
 
 function onError(err) {
