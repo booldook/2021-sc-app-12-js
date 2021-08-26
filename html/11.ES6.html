@@ -1,3 +1,39 @@
 <script>
-	
+	// String Method
+	let str = 'Hello World';
+	console.log(
+		str.startsWith('He'),	// true
+		str.endsWith('He'),		// false
+		str.includes('He'),		// true
+	);
+
+	// for ~ in의 취약점
+	// Array.prototype.getValue = function(n) { return this[n]; }
+	const arr = ['A', 'B', 'C'];
+	// console.log( arr.getValue(2) );
+	console.log( arr.length );
+	console.log( arr );
+	for(let i in arr) {	// for ~ in은 내가 만든 멤버변수에도 접근한다.
+		console.log(arr[i]);
+	}
+
+	for(let v of arr) {
+		console.log(v);
+	}
+
+	function sum() {
+		let sum = 0;
+		// for(let i=0; i<arguments.length; i++) { sum += arguments[i]; }
+		// for(let i in arguments) { sum += arguments[i]; }
+		// for(let v of arguments) { sum += v; }
+		console.log(arguments); // Object
+		// 배열처럼 순회 가능한 객체를 Iteration객체라 한다.
+		let args = Array.from(arguments); // Iteration객체를 순수배열로 만드는 메서드
+		console.log(args);
+		args.map(function(v) { sum += v; });
+		return sum;
+	}
+
+	const arg = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+	console.log( sum(...arg) );
 </script>
