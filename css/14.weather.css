@@ -1,0 +1,7 @@
+.wrapper {height: 100vh; display: flex; justify-content: center; align-items: center;}
+.weather-wrap {text-align: center;}
+.weather-wrap .city {font-size: 2em; margin-bottom: .75em;}
+.weather-wrap .img-wp {max-width: 60px; margin: auto; margin-bottom: 1.5em;}
+.weather-wrap .temp-wp {font-size: 1.5em; margin-bottom: 1em;}
+.weather-wrap .desc-wp {font-size: 1.25em;}
+.weather-wrap .desc-wp span:last-child{font-size: .875em;}
