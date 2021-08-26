@@ -1,0 +1,69 @@
+<script>
+	// 함수선언문
+	function a(k) {
+
+	}
+
+	// 함수표현식 ES5
+	const b = function(k) {
+
+	}
+
+	// 함수표현식 ES6
+	const c = () => {	// 매개변수가 없으면 () 써야함
+
+	}
+	const d = k => {	// 매개변수가 1개면 () 생략가능
+		
+	}
+	const e = (k, j) => {	// 매개변수가 2개 이상이면 () 써야함
+
+	}
+	const zp = n => n < 10 ? '0'+n : n; // 리턴값이 있는 한줄표현식은 {} 생략가능
+	console.log( zp(9) );
+
+	const arr = ['A', 'B', 'C'];
+	const arr2 = arr.map(function(v) {
+		return '__' + v;
+	});
+	console.log(arr2);
+	const arr3 = arr.map(v => '__' + v);
+	console.log(arr3);
+
+
+	// this - ES5함수표현식 vs ES6함수표현식
+	
+	// ES6에서의 객체내의 함수선언
+	const obj = {
+		fn: function() { // ES5의 함수선언
+			console.log('FN!')
+		},
+		fn2() { // ES6의 함수선언
+			console.log('FN2!')
+		}
+	}
+	obj.fn();
+	obj.fn2();
+
+	const obj2 = {
+		timeout() {
+			window.setTimeout(function() {
+				console.log(this);	// this: window
+			}, 1000);
+		},
+		timeout2() {
+			window.setTimeout(() => { // Arrow function은 bind() 할수 없다
+				console.log(this);	// this: obj2
+			}, 1000);
+		},
+		timeout3() {
+			window.setTimeout(function() {
+				console.log(this);	// this: obj2
+			}.bind(this), 1000);
+		},
+	}
+	obj2.timeout();
+	obj2.timeout2();
+	obj2.timeout3();
+
+</script>

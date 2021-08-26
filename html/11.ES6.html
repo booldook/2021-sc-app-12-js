@@ -36,4 +36,14 @@
 
 	const arg = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 	console.log( sum(...arg) );
+
+	// ES6 - 가변인자 받는 법 (arguments를 안써도 된다.)
+	function sum2(...args) {
+		console.log(args);
+		console.log(...args);
+		let sum = 0;
+		args.map(function(v) { sum += v; });
+		return sum;
+	}
+	console.log( sum2(...arg) );
 </script>
