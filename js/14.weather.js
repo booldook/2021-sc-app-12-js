@@ -9,9 +9,8 @@
 
 // cityList | korCity | city
 
-
+/*
 axios.get('../json/city.list.json').then(onGet).catch(onError);
-
 function onGet(r) {
 	const cityList = r.data;
 	const korCity = cityList.filter(v => v.country === 'KR');
@@ -22,7 +21,10 @@ function onGet(r) {
 	console.log(id, name, lat, lon);
 	// console.log( JSON.stringify(city) );
 }
-
 function onError(err) {
 	console.log(err);
-}
+}*/
+
+
+
+// http://openweathermap.org/img/wn/10d@2x.png
