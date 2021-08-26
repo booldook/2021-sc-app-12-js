@@ -22,6 +22,14 @@
 		<li class="list">6</li>
 	</ul>
 	<script>
+		console.log(
+			$('.lists2').offset(),
+			$('.lists2 .list').eq(2).offset(),
+			$('.lists2 .list').eq(2).offsetParent()
+		);
+
+
+
 		console.log($('.list').length);								// 6
 		console.log($('.list').eq(5));								// 6
 		console.log($('.lists2 .list').eq(2));				// 6
@@ -47,11 +55,11 @@
 			console.log(  $(this).prevAll()  );	// return []
 		});
 
-		console.clear();
+		// console.clear();
 
 		console.log( $('<li class="list"></li>') );	// DOM리턴 - 메모리에만 존재하는 DOM
 		var $list = $('.list').slice();
-		$('.list').remove();
+		// $('.list').remove();
 		console.log($list);
 
 		console.log( $('.lists').css(['color', 'border']) )
