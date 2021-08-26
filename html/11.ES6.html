@@ -67,4 +67,68 @@
 		return sum;
 	}
 	console.log( sum4(...arr2) );
+
+
+	// {}, speed, easing, cb
+	// {}
+	// {}, 200, cb
+	// {}, 'linear', cb
+	// {}, cb
+	function animate(_a, _b, _c, _d) {	// type이 다른 가변인자에 대한 처리
+		let opts, speed, easing, cb;
+		opts = _a;
+		if(typeof _b === 'number') {
+			speed = _b || 400;
+			if(typeof _c === 'string') {
+				easing = _c || 'swing';
+				// if(typeof ...)
+			}
+			else if(typeof _c === 'function') {
+				cb = _c || null;
+			}
+		}
+		else if(typeof _b === 'string') {
+			easing = _b || 'swing';
+		}
+		else if(typeof _b === 'function') {
+			cb = _b || null;
+		}
+	}
+
+
+	// let a: Number = 10; // Typescript
+	// let b: String = 10; // Typescript
+	/* function test4(_a: Number = 0, _b: Number = 0) {
+		let c: Number = _a + _b;
+		return c;
+	} */
+
+	// 조건문에서 false판정: false, 0, null, undefined, ''
+	console.log( typeof null ); 					// object
+	console.log( typeof undefined ); 			// undefined
+	console.log( typeof function() {} ); 	// function
+	console.log( typeof true ); 					// boolean
+	console.log( typeof [] ); 						// object
+	console.log( Array.isArray([]) );			// true
+	console.log( Array.isArray({}) );			// false
+
+	// 10, 20
+	// 10
+	// 
+	function test(_a, _b) { // ES5의 매개변수 초기값
+		let a =  _a || 0;
+		let b =  _b || 0;
+		return a + b;
+	}
+
+	function test2(_a = 0, _b = 0) { // ES6의 매개변수 초기값
+		return _a + _b;
+	}
+
+	console.log( 
+		test(), 
+		test(10, 20), 
+		test2(), 
+		test2(10, 20), 
+	);
 </script>

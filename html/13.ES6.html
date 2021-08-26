@@ -1,0 +1,23 @@
+<script>
+	// ES6 구조분해할당
+	const utils = {
+		stringFn: {
+			zp(n) {
+				return n < 10 ? '0' + n : n;
+			}
+		},
+		numberFn: {
+			random(stn, len) {
+				return Math.floor(Math.random() * len) + stn;
+			}
+		}
+	}
+
+	console.log( utils.numberFn.random(1, 10) );
+
+	const { stringFn, numberFn } = utils;
+	console.log( numberFn.random(1, 10) );
+	
+	const { random } = numberFn;
+	console.log( random(1, 10) );
+</script>
