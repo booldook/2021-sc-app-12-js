@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>var/let</title>
+</head>
+<body>
+	<h1>값: <span></span></h1>
+	<ul style="font-size: 30px;">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<script>
+		const li = document.querySelectorAll('li');
+		for(let i=0; i<li.length; i++) {
+			li[i].addEventListener('click', function() {
+				document.querySelector('h1 span').innerText = li[i].innerText;
+			});
+		}
+		for(let i=0; i<2; i++) {
+			// ...
+		}
+		// ===================================
+
+		// 비 순수함수 - 웬만하면 쓰면 안된다.
+		var k = 10;
+		function hap(a, b) {
+			return a + b + k;
+		}
+		console.log( hap(10, 20) ); // 40
+		k = 20;
+		console.log( hap(10, 20) ); // 50
+
+		// 순수함수란? 어떠한 상황(외부상황)에서도 값이 변하지 않는다
+		// 순수함수
+		function sum(a, b) {
+			return a + b;
+		}
+
+		// 1급함수 closure함수, 순수함수
+		function add10(n) {
+			let a = 10;
+			return function() {
+				return a + n;
+			}
+		}
+
+		var b = add10(30);
+		var c = add10(40);
+		console.log(b());
+		console.log(c());
+	</script>
+</body>
+</html>
