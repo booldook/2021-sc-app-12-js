@@ -1,0 +1,54 @@
+<script>
+// Set, Map
+// Object => key: value
+// Array => index: value
+// Map => 객체형태(key: value)를 띈 Iterable 요소, 배열처럼 다양한 메서드가 존대
+// Set
+
+const obj = {
+	lastName: '홍',
+	firstName: '길동',
+	fullName() {
+		return `${firstName} ${lastName}`
+	}
+}
+for(let v of Object.keys(obj)) {
+	console.log(v);
+}
+for(let v of Object.values(obj)) {
+	console.log(v);
+}
+for(let v of Object.entries(obj)) {
+	console.log(v);
+}
+
+console.log( Object.keys(obj) ); // Literal Object의 key를 배열로 만든다.
+console.log( Object.values(obj) ); // Literal Object의 value를 배열로 만든다.
+
+// Literal객체를 Map으로 만든다.
+console.log( Object.entries(obj) ); // Literal Object를 2차원 배열로 만든다.
+
+// console.clear();
+const map = new Map();
+map.set('key', 'value'); 	// 값을 저장
+map.get('key'); 					// 값을 가져오기
+map.has('key'); 					// 키가 존재하는지 평가 true/false
+map.delete('key')					// 삭제
+map.clear()								// 모두삭제
+map.size									// 요소의 갯수
+
+map.set('lastName', '홍');
+map.set('firstName', '길동');
+map.set('fullName', () => { return this; });
+console.log(map);
+console.log( map.get('firstName') );
+console.log( map.get('lastName' ) );
+console.log( map.get('fullName' )() );
+console.log( map.has('firstName') ? true : false ); // has(key)
+console.log( map.delete('fullName') ); // 삭제되면 true, 삭제실패 false
+// console.log( map.clear() ); // undefined
+
+map.forEach((v, k, a) => {
+	console.log(v, k, a);
+});
+</script>

@@ -77,9 +77,11 @@ function onGetWeather(r) {
 	let { main, name, weather } = r.data;
 	let { temp } = main;
 	let { main: title, description, icon } = weather[0];
+	let html = `<img src="${icons[0] + icon + icons[1]}" alt="${icon}" class="w100">`;
 	const $wrap = $('.weather-wrap');
 	$wrap.find('.city span').text(name);
-	$wrap.find('.img-wp img').attr('src', icons[0] + icon + icons[1]);
+	$wrap.find('.img-wp').html(html);
+	// $wrap.find('.img-wp img').attr('src', icons[0] + icon + icons[1]);
 	$wrap.find('.temp-wp span').text(temp);
 	$wrap.find('.desc-wp .main').text(title);
 	$wrap.find('.desc-wp .description').text(description);
