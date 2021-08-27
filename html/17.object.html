@@ -1,0 +1,38 @@
+<script>
+// 생성자객체
+class ShowName {
+	constructor(_firstName = '', _lastName = '') {
+		this.firstName = _firstName;
+		this.lastName = _lastName;
+	}
+	getFullName() { // ES5의 prototype
+		return `${this.lastName} ${this.firstName}`;
+	}
+}
+
+const hong = new ShowName('길동', '홍');
+console.log(hong);
+console.log( hong.getFullName() );
+
+// Literal 객체
+const human = {
+	firstName: '',
+	lastName: '',
+	getFullName() {
+		return `${this.lastName} ${this.firstName}`;
+	}
+}
+
+// Object.create(Literal Object) => Literal객체를 생성자 객체로 만들어 줌
+const hkd = Object.create(human); // Literal객체로 Instance 객체를 생성
+const hks = Object.create(human); // Literal객체로 Instance 객체를 생성
+
+hkd.firstName = '길동';
+hkd.lastName = '홍';
+console.log( hkd.getFullName() );
+
+hks.firstName = '길순';
+hks.lastName = '홍';
+console.log( hkd.getFullName() );
+console.log( hks.getFullName() );
+</script>
