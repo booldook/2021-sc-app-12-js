@@ -51,4 +51,28 @@ console.log( map.delete('fullName') ); // 삭제되면 true, 삭제실패 false
 map.forEach((v, k, a) => {
 	console.log(v, k, a);
 });
+
+
+// Set - 중복불가
+// set.add(value);
+// set.delete(value);
+// set.has(value);
+// set.clear();
+// set.size;
+const set = new Set();
+set.add('A');
+set.add('B');
+set.add('C');
+set.add('D');
+set.add('D'); // 중복등록 불가능
+set.add('D');
+set.add('D');
+console.log(set);
+
+set.add('hong');
+set.add('hong2');
+console.log( set.has('hong') );
+for(let v of set) {
+	console.log(v);
+}
 </script>
